@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "web01" do |web| 
     web.vm.box = "ubuntu/focal64"
-    web.vm.network "private_network", ip: "192.168.56.10"
+    web.vm.network "private_network", ip: "192.168.56.10" 
     web.vm.network "public_network", bridge: "wlo1" 
   end
 
