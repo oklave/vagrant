@@ -16,6 +16,7 @@ WINDOWS
     - [ ] Add ps script for Windows DC
     - [ ] Add ps hardering Windows
 
-Linux
+LINUX
+
     - [ ] postgresql provision on VM
     - [ ] nginx provision on VM
