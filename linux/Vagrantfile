@@ -1,0 +1,14 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config| 
+
+    config.vm.define "vm01" do |web| 
+      vm01.vm.box = "ubuntu/focal64"
+      vm01.vm.network "private_network", ip: "192.168.56.10" 
+      vm01.vm.network "public_network", bridge: "wlo1" # change bridge for your internet interface 
+      vm01.vm.hostname = "vm01"
+      # vm01.vm.provision "shell", path: "vm01_prov.sh"
+    end
+
+  end
