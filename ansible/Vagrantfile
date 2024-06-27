@@ -1,0 +1,20 @@
+grant.configure("2") do |config|
+
+  config.vm.box = "ubuntu/trusty64"
+
+  config.vm.define "machine1"
+  config.vm.define "machine2"
+
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "playbook.yml"
+    ansible.groups = {
+      "group1" => ["machine1"],
+      "group2" => ["machine2"],
+      "group3" => ["machine[1:2]"],
+      "group4" => ["other_node-[a:d]"], # silly group definition
+      "all_groups:children" => ["group1", "group2"],
+      "group1:vars" => {"variable1" => 9,
+                        "variable2" => "example"}
+    }
+  end
+end
